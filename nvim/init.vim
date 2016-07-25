@@ -11,6 +11,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-surround'
+Plug 'powerline/powerline'
 
 " Languages
 Plug 'mxw/vim-jsx'
@@ -36,7 +37,8 @@ call plug#end()
 " Don't bother supporting vi, update window title, no ~file
 set nocompatible title nobackup noswapfile
 " Show line number, current line and current command
-set number cursorline showcmd
+set number cursorline 
+" showcmd
 " Search incrementally with smart case sensitivity, highlight all matches
 set incsearch ignorecase smartcase hlsearch
 " Automatic indentation and adjust with tab and backspace
@@ -82,7 +84,7 @@ set statusline+=(%c,\ %l)\ -\ %L\
 
 " Auto commands
 autocmd VimResized * :wincmd = " Equalize window sizes on resize
-autocmd BufNewFile,BufRead *.md setlocal spell " Help correct my english
+autocmd BufNewFile,BufRead *.md setlocal spell spelllang=en_ca " Help correct my english
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufNewFile,BufRead *.scm set filetype=scheme
 autocmd BufNewFile,BufRead *.eth setfiletype eth
@@ -122,3 +124,5 @@ let g:ctrlp_custom_ignore = {
 
 " Javascript
 let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
+
